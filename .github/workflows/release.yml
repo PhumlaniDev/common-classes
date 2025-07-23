@@ -1,0 +1,17 @@
+name: Build Common Classes
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: action/checkout@v4
+      - uses: action/setup-java@4
+        with:
+          java-version: '21'
+          distribution: 'temerin'
+      - run: mvn clean install -DskipTests
