@@ -13,11 +13,12 @@ import java.time.Instant;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PaymentCompletedEvent {
+  private Long paymentId;
   private Long orderId;
-  private Long userId;
+  private String userId;
   private String toEmail;
-  private String currency;
   private BigDecimal totalAmount;
+  private String currency;
   private String transactionId;
   private Instant timestamp;
 }

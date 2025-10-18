@@ -1,0 +1,40 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0">
+
+  <!-- Credentials for deploy -->
+  <servers>
+    <server>
+      <id>nexus-releases</id>
+	    <username>${env.NEXUS_USERNAME}</username>
+	    <password>${env.NEXUS_PASSWORD}</password>
+    </server>
+    <server>
+      <id>nexus-snapshots</id>
+	    <username>${env.NEXUS_USERNAME}</username>
+	    <password>${env.NEXUS_PASSWORD}</password>
+    </server>
+  </servers>
+
+  <!-- Force all downloads through Nexus -->
+  <mirrors>
+    <mirror>
+      <id>nexus</id>
+      <mirrorOf>*</mirrorOf>
+      <url>https://nexus.phumlaniarendse.co.za/repository/maven-public/</url>
+    </mirror>
+  </mirrors>
+
+  <!-- Optional: Set Java version for builds -->
+  <profiles>
+    <profile>
+      <id>java-21</id>
+      <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+      </properties>
+    </profile>
+  </profiles>
+
+  <activeProfiles>
+    <activeProfile>java-21</activeProfile>
+  </activeProfiles>
+</settings>

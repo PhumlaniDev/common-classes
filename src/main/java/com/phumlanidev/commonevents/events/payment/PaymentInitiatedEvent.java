@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.time.Instant;
 
 @Data
 @Builder
@@ -13,8 +14,11 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 public class PaymentInitiatedEvent {
 
+  private Long paymentId;
   private Long orderId;
-  private Long userId;
+  private String userId;
   private BigDecimal amount;
-  private String transactionId;
+  private String currency;
+  private String paymentMethod;
+  private Instant timestamp;
 }
