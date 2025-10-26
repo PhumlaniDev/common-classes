@@ -1,5 +1,6 @@
 package com.phumlanidev.commonevents.events.payment;
 
+import com.phumlanidev.commonevents.events.order.OrderPlacedEvent;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -7,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.util.List;
 
 @Data
 @Builder
@@ -21,4 +23,5 @@ public class PaymentCompletedEvent {
   private String currency;
   private String transactionId;
   private Instant timestamp;
+  private List<OrderPlacedEvent.OrderItemDto> items;
 }
