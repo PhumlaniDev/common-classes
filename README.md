@@ -1,3 +1,5 @@
+[![Build Common Classes](https://github.com/PhumlaniDev/common-classes/actions/workflows/release.yml/badge.svg)](https://github.com/PhumlaniDev/common-classes/actions/workflows/release.yml)
+
 # common-classes
 
 Small Java library containing commonly used classes and utilities for JVM projects.
